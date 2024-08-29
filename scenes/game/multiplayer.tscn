@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=3 uid="uid://cohpbo72gnx44"]
+
+[ext_resource type="PackedScene" uid="uid://ce8ugusyqj1hv" path="res://scenes/game/player.tscn" id="1_mkqyp"]
+[ext_resource type="PackedScene" uid="uid://dl0mwnq7m26if" path="res://scenes/game/fields/simple_field.tscn" id="1_nrggq"]
+[ext_resource type="Script" path="res://scripts/multiplayer.gd" id="1_vabpj"]
+[ext_resource type="Resource" uid="uid://b04vnx1d5xsri" path="res://resources/paddles/basic_paddle.tres" id="2_3k5cg"]
+[ext_resource type="Resource" uid="uid://djs4hvvukpgr0" path="res://resources/player_controllers/multiplayer_p1.tres" id="3_jfdj6"]
+[ext_resource type="Resource" uid="uid://j2bflktbvl8c" path="res://resources/player_controllers/multiplayer_p2.tres" id="4_tlfcw"]
+[ext_resource type="PackedScene" uid="uid://bwkldtcru0via" path="res://scenes/game/ball.tscn" id="5_2ahch"]
+[ext_resource type="Resource" uid="uid://cse2jy4dvqk2s" path="res://resources/balls/simple_ball.tres" id="6_38n7r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g8oh6"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ff61"]
+font_size = 60
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_neuu1"]
+friction = 0.0
+bounce = 1.0
+
+[node name="Multiplayer" type="Node"]
+script = ExtResource("1_vabpj")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -320.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Message" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "START!"
+label_settings = SubResource("LabelSettings_g8oh6")
+
+[node name="Player One Score" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.475
+anchor_top = 0.0875
+anchor_right = 0.475
+anchor_bottom = 0.0875
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player Two Score" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.525
+anchor_top = 0.0875
+anchor_right = 0.525
+anchor_bottom = 0.0875
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Win Message" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -11.5
+offset_right = 52.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAYER <> WINS"
+label_settings = SubResource("LabelSettings_8ff61")
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="Field" parent="Game" instance=ExtResource("1_nrggq")]
+
+[node name="Player One" parent="Game" instance=ExtResource("1_mkqyp")]
+position = Vector2(-280, 0)
+_paddle = ExtResource("2_3k5cg")
+_controller = ExtResource("3_jfdj6")
+
+[node name="Player Two" parent="Game" instance=ExtResource("1_mkqyp")]
+position = Vector2(280, 0)
+_paddle = ExtResource("2_3k5cg")
+_controller = ExtResource("4_tlfcw")
+
+[node name="Ball" parent="Game" instance=ExtResource("5_2ahch")]
+physics_material_override = SubResource("PhysicsMaterial_neuu1")
+_specs = ExtResource("6_38n7r")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlayerController" load_steps=2 format=3 uid="uid://b8x6we6hvbnxk"]
+
+[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_1w0fw"]
+
+[resource]
+script = ExtResource("1_1w0fw")
+action_move_up = "move_up"
+action_move_down = "move_down"
+action_turbo = "turbo"

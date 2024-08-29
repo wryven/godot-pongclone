@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl0mwnq7m26if"]
+
+[ext_resource type="Texture2D" uid="uid://c4bd6udqolt14" path="res://assets/art/separator.png" id="1_dn5a6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7g3b"]
+size = Vector2(640, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rvx0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28bfw"]
+size = Vector2(20, 320)
+
+[node name="Simple Field" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Separator" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Separator"]
+texture = ExtResource("1_dn5a6")
+
+[node name="Upper Wall" type="StaticBody2D" parent="."]
+position = Vector2(0, -170)
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Upper Wall"]
+shape = SubResource("RectangleShape2D_o7g3b")
+
+[node name="Sprite" type="Sprite2D" parent="Upper Wall"]
+scale = Vector2(640, 20)
+texture = SubResource("PlaceholderTexture2D_rvx0s")
+
+[node name="Lower Wall" type="StaticBody2D" parent="."]
+position = Vector2(0, 170)
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Lower Wall"]
+shape = SubResource("RectangleShape2D_o7g3b")
+
+[node name="Sprite" type="Sprite2D" parent="Lower Wall"]
+scale = Vector2(640, 20)
+texture = SubResource("PlaceholderTexture2D_rvx0s")
+
+[node name="Left Goal" type="Area2D" parent="."]
+position = Vector2(-310, 0)
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Left Goal"]
+shape = SubResource("RectangleShape2D_28bfw")
+
+[node name="Sprite" type="Sprite2D" parent="Left Goal"]
+
+[node name="Right Goal" type="Area2D" parent="."]
+position = Vector2(310, 0)
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Right Goal"]
+shape = SubResource("RectangleShape2D_28bfw")
+
+[node name="Sprite" type="Sprite2D" parent="Right Goal"]

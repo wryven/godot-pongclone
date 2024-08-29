@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce8ugusyqj1hv"]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_sw7g5"]
+[ext_resource type="Texture2D" uid="uid://rsxqmrxs4bsg" path="res://assets/art/basic_paddle.png" id="2_6u3ml"]
+[ext_resource type="Shape2D" uid="uid://dc8af6otie0ry" path="res://shapes/basic_paddle.tres" id="2_la86q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hktfx"]
+font_size = 12
+font_color = Color(0.242164, 0.741541, 0.568223, 1)
+
+[node name="Player" type="AnimatableBody2D"]
+sync_to_physics = false
+script = ExtResource("1_sw7g5")
+
+[node name="Collision Shape" type="CollisionShape2D" parent="."]
+shape = ExtResource("2_la86q")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_6u3ml")
+
+[node name="Stamina Meter" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 14.0
+offset_bottom = 27.0
+text = "20
+"
+label_settings = SubResource("LabelSettings_hktfx")

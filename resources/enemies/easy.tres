@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EnemyBehaviour" load_steps=2 format=3 uid="uid://45xluq3dcwn7"]
+
+[ext_resource type="Script" path="res://scripts/enemy/enemy_behaviour.gd" id="1_1v5du"]
+
+[resource]
+script = ExtResource("1_1v5du")
+difficulty = 0

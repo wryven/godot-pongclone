@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlayerController" load_steps=2 format=3 uid="uid://djs4hvvukpgr0"]
+
+[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_0vvga"]
+
+[resource]
+script = ExtResource("1_0vvga")
+action_move_up = "p1_move_up"
+action_move_down = "p1_move_down"
+action_turbo = "p1_turbo"

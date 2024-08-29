@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwkldtcru0via"]
+
+[ext_resource type="Texture2D" uid="uid://bps4aolny8jj6" path="res://assets/art/simple_ball.png" id="1_s1svo"]
+[ext_resource type="Script" path="res://scripts/ball/ball.gd" id="1_xyvni"]
+[ext_resource type="Shape2D" uid="uid://bti85oi5mt0ou" path="res://shapes/simple_ball.tres" id="2_h8bjf"]
+
+[node name="Ball" type="RigidBody2D"]
+script = ExtResource("1_xyvni")
+
+[node name="Collision Shape" type="CollisionShape2D" parent="."]
+shape = ExtResource("2_h8bjf")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_s1svo")

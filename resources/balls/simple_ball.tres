@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallSpecs" load_steps=4 format=3 uid="uid://cse2jy4dvqk2s"]
+
+[ext_resource type="Script" path="res://scripts/ball/ball_specs.gd" id="1_xdt36"]
+[ext_resource type="Texture2D" uid="uid://bps4aolny8jj6" path="res://assets/art/simple_ball.png" id="2_jdy7d"]
+[ext_resource type="Shape2D" uid="uid://bti85oi5mt0ou" path="res://shapes/simple_ball.tres" id="2_p47kp"]
+
+[resource]
+script = ExtResource("1_xdt36")
+shape = ExtResource("2_p47kp")
+texture = ExtResource("2_jdy7d")
+initial_speed = 4.0
+max_speed = 8.0
+bounce_multiplier = 1.25

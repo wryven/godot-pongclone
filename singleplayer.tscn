@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdl1d60w7n0li"]
+
+[ext_resource type="PackedScene" uid="uid://ce8ugusyqj1hv" path="res://scenes/game/player.tscn" id="1_pmtmj"]
+[ext_resource type="Resource" uid="uid://b04vnx1d5xsri" path="res://resources/paddles/basic_paddle.tres" id="2_oe2ig"]
+[ext_resource type="Resource" uid="uid://djs4hvvukpgr0" path="res://resources/player_controllers/multiplayer_p1.tres" id="3_6alup"]
+[ext_resource type="PackedScene" uid="uid://bwkldtcru0via" path="res://scenes/game/ball.tscn" id="4_5vynd"]
+[ext_resource type="PackedScene" uid="uid://jya7juo8d810" path="res://scenes/game/enemy.tscn" id="4_phj6f"]
+[ext_resource type="Resource" uid="uid://cse2jy4dvqk2s" path="res://resources/balls/simple_ball.tres" id="5_j1jjr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_neuu1"]
+friction = 0.0
+bounce = 1.0
+
+[node name="Singleplayer" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_pmtmj")]
+position = Vector2(-280, 0)
+_paddle = ExtResource("2_oe2ig")
+_controller = ExtResource("3_6alup")
+
+[node name="Enemy" parent="." instance=ExtResource("4_phj6f")]
+
+[node name="Ball" parent="." instance=ExtResource("4_5vynd")]
+physics_material_override = SubResource("PhysicsMaterial_neuu1")
+_specs = ExtResource("5_j1jjr")
